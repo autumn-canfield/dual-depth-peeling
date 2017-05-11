@@ -1,0 +1,5 @@
+u32 number_of_vertices
+f32 vertices[3][number_of_vertices]
+u32 number_of_triangles
+u32 triangles[3][number_of_triangles]
+
