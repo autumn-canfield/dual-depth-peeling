@@ -1,10 +1,10 @@
 #version 330 core
 layout(location = 0) in vec3 vertexPosition_modelspace;
-uniform unsigned int time;
+uniform int time;
 uniform mat4 projection_matrix;
 
 void main(){
-   float theta = time * 0.002;
+   float theta = float(time) * 0.002;
    mat3 rotation_matrix = mat3(
          cos(theta), 0, sin(theta),
          0, 1, 0,

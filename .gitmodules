@@ -1,0 +1,4 @@
+[submodule "smallwin"]
+	path = smallwin
+	url = https://github.com/miles-canfield/smallwin.git
+	branch = master

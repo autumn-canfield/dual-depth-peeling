@@ -1,6 +1,6 @@
 #version 330 core
 layout(location = 0) in vec3 vertexPosition_modelspace;
-uniform unsigned int time;
+uniform int time;
 uniform mat4 projection_matrix;
 out vec3 pos;
 
@@ -18,4 +18,3 @@ void main(){
    position += vec3(0.0, 0.0, -0.9);
    gl_Position = vec4(position, 1.0) * projection_matrix;
 }
-
