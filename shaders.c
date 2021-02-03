@@ -1,9 +1,9 @@
 #include<stdio.h>
 #include<string.h>
 #include<GL/glew.h>
-#include"util/memory/alloc.h"
 #include"util/file_io.h"
 #include"types.h"
+#include"stdlib.h"
 
 static const char *_default_fs =
 "#version 330 core\n"
@@ -35,22 +35,22 @@ static void print_shader_compilation_log(u32 shader_id)
 {
    i32 info_log_length;
    glGetShaderiv(shader_id, GL_INFO_LOG_LENGTH, &info_log_length);
-   char *info_log = alloc(info_log_length+1);
+   char *info_log = (char*)malloc(info_log_length+1);
    info_log[info_log_length] = 0;
    glGetShaderInfoLog(shader_id, info_log_length, NULL, info_log);
    printf("%s", info_log);
-   dealloc(info_log);
+   free(info_log);
 }
 
 static void print_program_compilation_log(u32 program_id)
 {
    i32 info_log_length;
    glGetProgramiv(program_id, GL_INFO_LOG_LENGTH, &info_log_length);
-   char *info_log = alloc(info_log_length+1);
+   char *info_log = (char*)malloc(info_log_length+1);
    info_log[info_log_length] = 0;
    glGetProgramInfoLog(program_id, info_log_length, NULL, info_log);
    printf("%s\n", info_log);
-   dealloc(info_log);
+   free(info_log);
 }
 
 static void load_shader(const char *file_name, u32 shader_id, const char *fallback)
@@ -65,7 +65,7 @@ static void load_shader(const char *file_name, u32 shader_id, const char *fallba
    }
 
    size = file_size(shader_file);
-   char *shader_source = alloc(size);
+   char *shader_source = (char*)malloc(size);
    file_read(shader_file, sizeof(char), size, shader_source);
    close_file(shader_file);
 

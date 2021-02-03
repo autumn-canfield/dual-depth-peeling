@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="main.c" />
+    <ClCompile Include="shaders.c" />
+    <ClCompile Include="util\file_io.c" />
+    <ClCompile Include="loading\load_mesh.c" />
+    <ClCompile Include="smallwin\smallwin.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="shaders">
+      <UniqueIdentifier>{9d5f9010-2099-4017-9599-0a64b6da221b}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\ddpeel_init.fs">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="resources\ddpeel_init.vs">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="resources\dragon.fs">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="resources\dragon.vs">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="resources\quad.fs">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="resources\quad.vs">
+      <Filter>shaders</Filter>
+    </None>
+  </ItemGroup>
+</Project>

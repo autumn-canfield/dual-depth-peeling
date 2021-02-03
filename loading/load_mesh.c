@@ -1,6 +1,6 @@
-#include"util/memory/alloc.h"
 #include"util/file_io.h"
 #include"types.h"
+#include"stdlib.h"
 
 typedef struct{
    u32 num_vertices;
@@ -15,11 +15,11 @@ loaded_mesh load_mesh(const char *file_name)
    loaded_mesh mesh;
 
    file_read(mesh_file, sizeof(u32), 1, &mesh.num_vertices);
-   mesh.vertices = alloc(mesh.num_vertices*3*sizeof(f32));
+   mesh.vertices = (f32*)malloc(mesh.num_vertices*3*sizeof(f32));
    file_read(mesh_file, sizeof(f32), mesh.num_vertices*3, mesh.vertices);
 
    file_read(mesh_file, sizeof(u32), 1, &mesh.num_indices);
-   mesh.indices = alloc(mesh.num_indices*sizeof(u32));
+   mesh.indices = (u32*)malloc(mesh.num_indices*sizeof(u32));
    file_read(mesh_file, sizeof(u32), mesh.num_indices, mesh.indices);
 
    close_file(mesh_file);

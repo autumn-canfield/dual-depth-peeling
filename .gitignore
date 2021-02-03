@@ -31,3 +31,10 @@
 # Debug files
 *.dSYM/
 *.su
+
+# visual
+.vs/
+x64/
+*.vcxproj.user
+DvlErrLog.txt
+glew-2.1.0
